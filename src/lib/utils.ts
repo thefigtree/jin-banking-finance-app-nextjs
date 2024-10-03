@@ -68,7 +68,6 @@ export function formatAmount(amount: number): string {
   const formatter = new Intl.NumberFormat("ko-KR", {
     style: "currency",
     currency: "KRW",
-    minimumFractionDigits: 2,
   });
 
   return formatter.format(amount);
