@@ -1,3 +1,3 @@
-# jin-banking-finance-app-nextjs
+# banking-finance-app-nextjs
 
-jin-banking-finance-app-nextjs
+-shadcn/ui
