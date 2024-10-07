@@ -27,16 +27,16 @@ export default function Sidebar({ user }: SiderbarProps) {
         </Link>
 
         {sidebarLinks.map((item) => {
-          // const isActive =
-          //   path === item.route || path.startsWith(`${item.route}/`);
+          const isActive =
+            path === item.route || path.startsWith(`${item.route}/`);
 
           return (
             <Link
               href={item.route}
               key={item.label}
               className={cn(
-                "flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start"
-                // { "bg-to-blue-300": isActive }
+                "flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start",
+                { "bg-to-blue-300": isActive }
               )}
             >
               <div className="relative size-6">
@@ -44,15 +44,14 @@ export default function Sidebar({ user }: SiderbarProps) {
                   src={item.imgURL}
                   alt={item.label}
                   fill
-                  // className={cn({ "brightness-[3] invert-0": isActive })}
+                  className={cn({ "brightness-[3] invert-0": isActive })}
                 ></Image>
               </div>
 
               <p
-                className={cn(
-                  "text-16 font-semibold text-black-2 max-xl:hidden text-green-400"
-                  // { "!text-white": isActive }
-                )}
+                className={cn("text-16 font-semibold  max-xl:hidden ", {
+                  "!text-white": isActive,
+                })}
               >
                 {item.label}
               </p>
