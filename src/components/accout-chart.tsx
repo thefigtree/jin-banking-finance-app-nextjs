@@ -5,7 +5,7 @@ import { Doughnut } from "react-chartjs-2";
 
 chartJs.register(ArcElement, Tooltip, Legend);
 
-const Chart = ({ accounts }: DoughnutChartProps) => {
+export default function Chart({ accounts }: DoughnutChartProps) {
   const data = {
     datasets: [
       {
@@ -23,5 +23,4 @@ const Chart = ({ accounts }: DoughnutChartProps) => {
       options={{ cutout: "60%", plugins: { legend: { display: false } } }}
     ></Doughnut>
   );
-};
-export default Chart;
+}

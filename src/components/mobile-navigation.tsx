@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const MobileNav = ({ user }: MobileNavProps) => {
+export default function MobileNavigation({ user }: MobileNavProps) {
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
@@ -86,5 +86,4 @@ const MobileNav = ({ user }: MobileNavProps) => {
       </Sheet>
     </section>
   );
-};
-export default MobileNav;
+}

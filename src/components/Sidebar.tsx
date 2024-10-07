@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Sidebar = ({ user }: SiderbarProps) => {
+export default function Sidebar({ user }: SiderbarProps) {
   const path = usePathname();
 
   return (
@@ -62,5 +62,4 @@ const Sidebar = ({ user }: SiderbarProps) => {
       </nav>
     </section>
   );
-};
-export default Sidebar;
+}

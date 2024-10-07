@@ -1,9 +1,9 @@
-const HeaderBox = ({
+export default function Header({
   type = "title",
   title,
   subtext,
   user,
-}: HeaderBoxProps) => {
+}: HeaderBoxProps) {
   return (
     <div className="flex flex-col gap-1">
       <h1 className="text-24 lg:text-30 font-semibold text-gray-900">
@@ -16,5 +16,4 @@ const HeaderBox = ({
       <p>{subtext}</p>
     </div>
   );
-};
-export default HeaderBox;
+}

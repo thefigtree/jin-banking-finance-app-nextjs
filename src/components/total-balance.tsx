@@ -1,13 +1,13 @@
 "use client";
 
-import Chart from "./Chart";
-import Counter from "./Counter";
+import Chart from "./accout-chart";
+import Counter from "./number-counter";
 
-const TotalBalanceBox = ({
+export default function TotalBalanceBox({
   accounts = [],
   totalBanks,
   totalCurrentBalance,
-}: TotlaBalanceBoxProps) => {
+}: TotlaBalanceBoxProps) {
   return (
     <section className="flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6">
       <div className="flex size-full max-w-[100px] items-center sm:max-w-[120px]">
@@ -29,5 +29,4 @@ const TotalBalanceBox = ({
       </div>
     </section>
   );
-};
-export default TotalBalanceBox;
+}

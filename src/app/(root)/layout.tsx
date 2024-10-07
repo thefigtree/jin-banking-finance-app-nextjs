@@ -1,5 +1,5 @@
-import MobileNav from "@/components/MobileNav";
-import Sidebar from "@/components/Sidebar";
+import MobileNavigation from "@/components/mobile-navigation";
+import Sidebar from "@/components/sidebar";
 import Image from "next/image";
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
           ></Image>
 
           <div>
-            <MobileNav user={loggedIn}></MobileNav>
+            <MobileNavigation user={loggedIn}></MobileNavigation>
           </div>
         </div>
         {children}
