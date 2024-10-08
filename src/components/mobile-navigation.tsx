@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sheet,
   SheetClose,
@@ -11,8 +13,11 @@ import { sidebarLinks } from "@/constants/links";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function MobileNavigation({ user }: MobileNavProps) {
+  const path = usePathname();
+
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
@@ -46,8 +51,8 @@ export default function MobileNavigation({ user }: MobileNavProps) {
             <SheetClose asChild>
               <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                 {sidebarLinks.map((item) => {
-                  // const isActive =
-                  //   path === item.route || path.startsWith(`${item.route}/`);
+                  const isActive =
+                    path === item.route || path.startsWith(`${item.route}/`);
 
                   return (
                     <SheetClose asChild key={item.route}>
@@ -55,8 +60,8 @@ export default function MobileNavigation({ user }: MobileNavProps) {
                         href={item.route}
                         key={item.label}
                         className={cn(
-                          "flex gap-3 items-center p-4 rounded-lg w-full max-w-60"
-                          // { "bg-to-blue-300": isActive }
+                          "flex gap-3 items-center p-4 rounded-lg w-full max-w-60",
+                          { "bg-bank-gradient": isActive }
                         )}
                       >
                         <Image
@@ -64,13 +69,15 @@ export default function MobileNavigation({ user }: MobileNavProps) {
                           alt={item.label}
                           width={20}
                           height={20}
-                          // className={cn({ "brightness-[3] invert-0": isActive })}
+                          className={cn({
+                            "brightness-[3] invert-0": isActive,
+                          })}
                         ></Image>
 
                         <p
                           className={cn(
-                            "text-16 font-semibold text-black-2 max-xl:hidden text-green-400"
-                            // { "!text-white": isActive }
+                            "text-16 font-semibold text-black-2 max-xl:hidden",
+                            { "!text-white": isActive }
                           )}
                         >
                           {item.label}
@@ -79,8 +86,10 @@ export default function MobileNavigation({ user }: MobileNavProps) {
                     </SheetClose>
                   );
                 })}
+                USER
               </nav>
             </SheetClose>
+            FOOTER
           </div>
         </SheetContent>
       </Sheet>
